@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Biodata</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Marriage Biodata</h1>
+        <form id="biodataForm" onsubmit="return validateForm(event)">
+            <div class="section">
+                <h2>Basic Information</h2>
+                <label for="photo">Upload Photo:</label>
+                <input type="file" id="photo" accept="image/*">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" oninput="validateTextOnly(this)">
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob">
+
+                <label for="placeOfBirth">Place of Birth:</label>
+                <input type="text" id="placeOfBirth" oninput="validateTextOnly(this)">
+
+                <label for="age">Age:</label>
+                <input type="text" id="age" oninput="validateNumberOnly(this)">
+
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Male"> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </div>
+
+                <label for="height">Height:</label>
+                <input type="text" id="height" oninput="validateHeight(this)">
+
+                <label for="maritalStatus">Marital Status:</label>
+                <select id="maritalStatus" onchange="validateTextOnly(this)">
+                    <option value="">Select</option>
+                    <option value="Never Married">Never Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widowed">Widowed</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="religion">Religion:</label>
+                <input type="text" id="religion" oninput="validateTextOnly(this)">
+
+                <label for="nationality">Nationality:</label>
+                <input type="text" id="nationality" oninput="validateTextOnly(this)">
+
+                <label for="bloodGroup">Blood Group:</label>
+                <select id="bloodGroup">
+                    <option value="">Select</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" oninput="validateNumberOnly(this)">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" oninput="validateMixed(this)">
+
+                <label for="permanentAddress">Permanent Address:</label>
+                <textarea id="permanentAddress" oninput="validateMixed(this)"></textarea>
+
+                <label for="presentAddress">Present Address:</label>
+                <textarea id="presentAddress" oninput="validateMixed(this)"></textarea>
+            </div>
+
+            <div class="section">
+                <h2>Family Details</h2>
+                <label for="fatherName">Father's Name:</label>
+                <input type="text" id="fatherName" oninput="validateTextOnly(this)">
+
+                <label for="fatherOccupation">Father's Occupation:</label>
+                <input type="text" id="fatherOccupation" oninput="validateTextOnly(this)">
+
+                <label for="motherName">Mother's Name:</label>
+                <input type="text" id="motherName" oninput="validateTextOnly(this)">
+
+                <label for="motherOccupation">Mother's Occupation:</label>
+                <input type="text" id="motherOccupation" oninput="validateTextOnly(this)">
+
+                <label for="siblings">Siblings:</label>
+                <textarea id="siblings" oninput="validateMixed(this)"></textarea>
+            </div>
+
+            <div class="section">
+                <h2>Education</h2>
+                <table class="edu-table">
+                    <thead>
+                        <tr>
+                            <th>Qualification</th>
+                            <th>Institute</th>
+                            <th>Passing Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="qualification" oninput="validateTextOnly(this)"></td>
+                            <td><input type="text" name="institute" oninput="validateTextOnly(this)"></td>
+                            <td><input type="text" name="passingYear" oninput="validateNumberOnly(this)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <label for="currentEducation">Currently Pursuing:</label>
+                <input type="text" id="currentEducation" oninput="validateTextOnly(this)">
+
+                <label for="certifications">Additional Certifications:</label>
+                <textarea id="certifications" oninput="validateTextOnly(this)"></textarea>
+            </div>
+
+            <div class="section">
+                <h2>Profession</h2>
+                <label for="occupation">Current Occupation:</label>
+                <input type="text" id="occupation" oninput="validateTextOnly(this)">
+
+                <label for="income">Annual Income:</label>
+                <input type="text" id="income" oninput="validateNumberOnly(this)">
+
+                <label for="careerPlan">Future Career Plan:</label>
+                <textarea id="careerPlan" oninput="validateTextOnly(this)"></textarea>
+            </div>
+
+            <div class="section">
+                <h2>Appearance & Lifestyle</h2>
+                <label for="complexion">Complexion:</label>
+                <input type="text" id="complexion" oninput="validateTextOnly(this)">
+
+                <label for="bodyType">Body Type:</label>
+                <input type="text" id="bodyType" oninput="validateTextOnly(this)">
+
+                <label for="diet">Diet:</label>
+                <input type="text" id="diet" oninput="validateTextOnly(this)">
+
+                <label for="smoking">Smoking:</label>
+                <select id="smoking">
+                    <option value="No">No</option>
+                    <option value="Occasionally">Occasionally</option>
+                    <option value="Yes">Yes</option>
+                </select>
+
+                <label for="drinking">Drinking:</label>
+                <select id="drinking">
+                    <option value="No">No</option>
+                    <option value="Occasionally">Occasionally</option>
+                    <option value="Yes">Yes</option>
+                </select>
+
+                <label for="hobbies">Hobbies/Interests:</label>
+                <textarea id="hobbies" oninput="validateTextOnly(this)"></textarea>
+            </div>
+
+            <div class="section">
+                <h2>Partner Preferences</h2>
+                <label for="partnerAge">Age Range:</label>
+                <input type="text" id="partnerAge" oninput="validateAgeRange(this)">
+
+                <label for="partnerHeight">Height:</label>
+                <input type="text" id="partnerHeight" oninput="validateHeight(this)">
+
+                <label for="partnerEducation">Education:</label>
+                <input type="text" id="partnerEducation" oninput="validateTextOnly(this)">
+
+                <label for="partnerOccupation">Occupation:</label>
+                <input type="text" id="partnerOccupation" oninput="validateTextOnly(this)">
+
+                <label for="partnerReligion">Religion:</label>
+                <input type="text" id="partnerReligion" oninput="validateTextOnly(this)">
+            </div>
+
+            <div class="section">
+                <h2>Additional Details</h2>
+                <label for="aboutMe">About Me:</label>
+                <textarea id="aboutMe" oninput="validateTextOnly(this)"></textarea>
+
+                <label for="futurePlans">Future Plans:</label>
+                <textarea id="futurePlans" oninput="validateTextOnly(this)"></textarea>
+
+                <label for="healthIssues">Disabilities or Health Issues:</label>
+                <textarea id="healthIssues" oninput="validateTextOnly(this)"></textarea>
+
+                <label for="languages">Languages Known:</label>
+                <textarea id="languages" oninput="validateTextOnly(this)"></textarea>
+
+                <label for="location">Preferred Location for Settling:</label>
+                <textarea id="location" oninput="validateTextOnly(this)"></textarea>
+
+                <label for="socialMedia">Social Media:</label>
+                <textarea id="socialMedia" oninput="validateMixed(this)"></textarea>
+            </div>
+
+            <button type="submit">Submit Biodata</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FF5722;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.lang-select {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.country, .language {
+  user-select: none;
+}
+
+/* Main */
+.main-content {
+  display: flex;
+  height: calc(100vh - 100px);
+  background-color: #FF5722;
+  color: #fff;
+  padding: 2rem 4rem;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-side {
+  flex: 1;
+  max-width: 1000px;
+}
+
+.left-side h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.left-side p {
+  font-weight: 900;
+  font-size: 1rem;
+  margin-bottom: 4rem;
+}
+
+/* Shopping cart illustration */
+.shopping-cart-illustration {
+  position: relative;
+  height: 150px;
+  width: 250px;
+}
+
+.shopping-cart {
+  width: 150px;
+  height: 90px;
+  border: 8px solid #FF6E40;
+  border-radius: 12px 12px 10px 10px;
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  background-color: #FF7043;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.shopping-cart::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #673AB7;
+  border-radius: 50%;
+  top: 70px;
+  left: 10px;
+  box-shadow: 70px 0 #673AB7;
+}
+
+.bag {
+  width: 40px;
+  height: 40px;
+  background-color: #FF7043;
+  border-radius: 8px;
+  border: 3px solid #FF6E40;
+  position: absolute;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.bag1 {
+  top: 10px;
+  left: 10px;
+  transform: rotate(15deg);
+}
+
+.bag2 {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(-10deg);
+}
+
+.location-pin {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: 36px;
+  background: #673AB7;
+  border-radius: 12px 12px 12px 12px / 18px 18px 18px 18px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.location-pin::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* Right side - login form */
+.right-side {
+  flex: 1;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem 2.5rem;
+  color: #222;
+  box-shadow: 0 8px 15px rgb(0 0 0 / 0.1);
+}
+
+.login-form h3 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline-offset: 2px;
+  outline-color: #FF5722;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 0.75rem 0;
+  border: none;
+  background-color: #FF5722;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #E64A19;
+}
+
+.terms-text {
+  font-size: 0.8rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.terms-text a {
+  color: #FF5722;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.links a {
+  font-size: 0.85rem;
+  color: #2176FF;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.create-account {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+.create-account a {
+  color: #2176FF;
+  text-decoration: none;
+  cursor: pointer;
+}

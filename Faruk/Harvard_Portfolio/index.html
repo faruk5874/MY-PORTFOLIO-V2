@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Faruk</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo-and-alert">
+                <div class="logo">
+                    <img src="assets/logo.jpg" alt="Portfolio Logo" class="portfolio-logo">
+                    <a href="#">PORTFOLIO</a>
+                </div>
+                <p class="alert-message"> <span style="color: #ff0000; font-size: 25px;">•</span> Where design meets intelligence — and ideas become solutions</p>
+            </div>
+            <nav class="main-nav">
+                <div class="nav-icons">
+                    <button class="search-btn" aria-label="Search">
+                        <svg class="icon-search" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 16 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                        Search
+                    </button>
+                    <button class="menu-toggle" aria-label="Toggle Menu">
+                        <svg class="icon-menu" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                        </svg>
+                        Menu
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <div class="close-btn-container">
+            <div class="mobile-menu-logo">
+                Md. Omar Faruk
+            </div>
+            <button class="close-btn" aria-label="Close Menu">Close &times;</button>
+        </div>
+        <ul class="main-menu-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">My Projects</a></li>
+            <li><a href="#contact-info">Contact Information</a></li> </ul>
+    </div>
+
+    <main>
+        <section class="hero-section" style="background-image: url('assets/uni.jpeg');
+                     background-size: cover;
+                     background-position: center;
+                     height: 100vh;">
+            <div class="hero-content">
+                <h1 class="animated-name">Md. Omar Faruk</h1>
+                <p><span id="typing-text"></span></p>
+            </div>
+        </section>
+
+        <section class="content-blocks" id="about">
+            <h1>About</h1>
+            <div class="content grid-2-col">
+                <div class="block1">
+                    <div class="image">
+                        <img src="assets/faruk.jpg" alt="Md. Omar Faruk">
+                    </div>
+                </div>
+                <div class="block2">
+                    <h1>Hello, <span id="about-name-typing-text"></span></h1>
+                    <p>A passionate Data Analyst committed to turning complex datasets into meaningful insights. With a strong foundation in data analytics, statistical modeling, and visualization tools, I specialize in uncovering patterns, solving real-world problems, and driving informed decisions through data-driven storytelling.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="education-section" id="education">
+            <div class="container">
+                <h1>Education and Qualification</h1>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <h2 class="education-title">
+                            School
+                            <img src="assets/school.png" alt="School Logo" class="educational-logo">
+                        </h2>
+                        <p class="institution">Siraj Uddin Sarker Vidyaniketan & College</p>
+                        <p class="degree">Degree: Primary School Certificate (PSC)</p>
+                        <p class="year">Year: 2011</p>
+                        <p class="description">Completed primary education with a focus on foundational subjects. Achieved high grades in the PSC examination.</p>
+                    </div>
+                    <div class="education-item">
+                        <h2 class="education-title">
+                            College
+                            <img src="assets/college.png" alt="College Logo" class="educational-logo">
+                        </h2>
+                        <p class="institution">Rajuk Uttara Model College</p>
+                        <p class="degree">Degree: Secondary School Certificate (SSC) & Higher Secondary Certificate (HSC)</p>
+                        <p class="year">Year: 2017 & 2019</p>
+                        <p class="description">Pursued secondary and higher secondary education in Science. Participated in extracurricular activities.</p>
+                    </div>
+                    <div class="education-item">
+                        <h2 class="education-title">
+                            University
+                            <img src="assets/versity.png" alt="University Logo" class="educational-logo">
+                        </h2>
+                        <p class="institution">Daffodil International University</p>
+                        <p class="degree">Degree: Bachelor of Science in Computer Science and Engineering (BSc in CSE)</p>
+                        <p class="year">Year: 2022-2025</p>
+                        <p class="description">Studying CSE with focus on Data Analytics and Software Development. Engaged in data visualization projects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section" id="skills">
+            <div class="container">
+                <h1>Skills</h1>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <img src="assets/c.jpg" alt="C Programming">
+                        <h2 class="skill-title">C</h2>
+                        <p class="skill-description">Proficient in C programming for system-level development and competitive programming, demonstrating strong understanding of algorithms and data structures.</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/ja.jpg" alt="Java Programming">
+                        <h2 class="skill-title">JAVA</h2>
+                        <p class="skill-description">Experienced in Java for object-oriented programming, enterprise applications, and Android development. Capable of building robust and scalable solutions.</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/pi.jpg" alt="Python Programming">
+                        <h2 class="skill-title">PYTHON</h2>
+                        <p class="skill-description">Skilled in Python for data analysis, machine learning, web development, and automation. Adept at leveraging libraries like Pandas, NumPy, and Scikit-learn.</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/ml.jpg" alt="Machine Learning">
+                        <h2 class="skill-title">MACHINE LEARNING</h2>
+                        <p class="skill-description">Solid understanding of machine learning algorithms, including supervised and unsupervised learning, model training, evaluation, and deployment.</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/nlp.jpg" alt="Natural Language Processing">
+                        <h2 class="skill-title">NLP</h2>
+                        <p class="skill-description">Familiar with Natural Language Processing techniques for text analysis, sentiment analysis, and building conversational AI systems.</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/dl.jpg" alt="Deep Learning">
+                        <h2 class="skill-title">DEEP LEARNING</h2>
+                        <p class="skill-description">Knowledgeable in deep learning frameworks like TensorFlow/Keras and PyTorch, capable of designing and implementing neural networks for complex tasks.</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/html.jpg" alt="HTML5">
+                        <h2 class="skill-title">HTML5</h2>
+                        <p class="skill-description">With a solid foundation in data analytics, I’ve explored everything from preprocessing complex datasets to uncovering trends using visualization and statistics. I strive to make data both understandable and actionable.</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/css.png" alt="CSS3">
+                        <h2 class="skill-title">CSS3</h2>
+                        <p class="skill-description">I had a solid grasp on data structuring and cleaning, I advanced to data visualization to bring insights to life. I’ve created compelling dashboards, implemented dynamic charts, and presented analytical stories that not only look polished but also adapt to various audiences and decision-makers.</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/js.jpeg" alt="JavaScript">
+                        <h2 class="skill-title">JAVASCRIPT</h2>
+                        <p class="skill-description">With scripting and automation, I’ve added a new layer of power to my analytical skills—developing interactive reports, automating complex tasks, and making data exploration faster and more efficient.</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="assets/php.jpg" alt="PHP Programming">
+                        <h2 class="skill-title">PHP</h2>
+                        <p class="skill-description">Proficient in PHP for server-side scripting and web development, capable of building dynamic web applications and interacting with databases.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section" id="projects">
+            <h1>My Projects</h1>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/cal.jpg" alt="Calculator Project">
+                    </div>
+                    <div class="project-text">
+                        <h3><a href="Calculator/index.html">My Calculator Project</a></h3>
+                        <p>Developed a functional calculator using HTML, CSS, and JavaScript. This project demonstrates my proficiency in front-end web development and basic arithmetic logic.</p>
+                        <a href="Calculator/index.html" class="learn-more">Learn More <span class="arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-text">
+                        <h3><a href="Biodata_form/index.html">My Wedding Biodata Project</a></h3>
+                        <p>Created an interactive wedding biodata form, showcasing data collection, form validation, and user experience design. This project highlights my ability to build user-friendly interfaces.</p>
+                        <a href="Biodata_form/index.html" class="learn-more">Learn More <span class="arrow">→</span></a>
+                    </div>
+                    <div class="project-image">
+                        <img src="assets/wedding.jpeg" alt="Wedding Biodata Project">
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/project3.png" alt="Daraz Clone Project">
+                    </div>
+                    <div class="project-text">
+                        <h3><a href="daraz/index.html">Daraz</a></h3>
+                        <p>Developed a clone of Daraz e-commerce website, demonstrating front-end development skills using HTML, CSS, and JavaScript.</p>
+                        <a href="daraz/index.html" class="learn-more">Learn More <span class="arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-text">
+                        <h3><a href="Biodata_crud/login.php">Biodata CRUD Operation Project</a></h3>
+                        <p>Created an interactive wedding biodata form, showcasing data collection, form validation, and user experience design. This project highlights my ability to build user-friendly interfaces.</p>
+                        <a href="Biodata_crud/login.php" class="learn-more">Learn More <span class="arrow">→</span></a>
+                    </div>
+                    <div class="project-image">
+                        <img src="assets/wedding.jpeg" alt="Wedding Biodata Project">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-info-section" id="contact-info">
+            <div class="container">
+                <h1>Contact Information</h1>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope icon"></i>
+                        <div class="text-content">
+                            <h3>Email</h3>
+                            <p>faruk15-5874@diu.edu.bd</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt icon"></i>
+                        <div class="text-content">
+                            <h3>Phone</h3>
+                            <p>+880 1521567931</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt icon"></i>
+                        <div class="text-content">
+                            <h3>Location</h3>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer grid-3-col">
+            <div class="container copyright-social">
+                <div>
+                    <p class="copyright">&copy; Copyright 2025 Md. Omar Faruk</p>
+                </div>
+                <div class="footer-logo">
+                    <p>Md. Omar Faruk</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ftg_omarfaruk/?utm_source=ig_web_button_share_sheet" aria-label="Instagram"><img src="https://www.harvard.edu/wp-content/uploads/2023/11/Instagram-1.png" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com/in/md-omar-faruk-46b782246/" aria-label="LinkedIn"><img src="https://www.harvard.edu/wp-content/uploads/2023/11/Linkedin-1.png" alt="LinkedIn"></a>
+                    <a href="https://www.facebook.com/share/19H8KG4NxF/?mibextid=wwXIfr" aria-label="Facebook"><img src="https://www.harvard.edu/wp-content/uploads/2023/11/FB3.png" alt="Facebook"></a>
+                    <a href="https://github.com/faruk5874" aria-label="Github"><img src="assets/git.png" alt="Github"></a>
+                </div>
+                <div class="blank-section"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

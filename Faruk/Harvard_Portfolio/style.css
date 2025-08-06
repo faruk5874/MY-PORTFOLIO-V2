@@ -1,0 +1,1095 @@
+/* Basic Reset & Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+/* Container for Centering Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #400000; /* Dark Crimson */
+    margin-bottom: 0.8em;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 2.2em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+/* Links */
+a {
+    color: #a41034; /* Harvard Crimson */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #7a0c28; /* Darker Crimson */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #a41034; /* Harvard Crimson */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    position: relative; /* For the subtle shadow animation */
+    overflow: hidden; /* Hide overflow of the pseudo-element */
+    z-index: 1;
+}
+
+.btn:hover {
+    background-color: #7a0c28;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* Light overlay */
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-out;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    transform: translateX(0);
+}
+
+.btn:active {
+    transform: translateY(0); /* Press down effect */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+.link-more {
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* --- Header --- */
+.main-header {
+    background-color: #fff;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 90px;
+    width: 100vw; /* Make full width */
+    margin: 0 auto; /* Remove any default margin */
+}
+
+/* ⬇️ Make header content take full width and center nicely */
+.header-content {
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 100%; /* prevent any max-width constraint */
+    padding: 0 0; /* Remove side padding */
+}
+
+/* ⬅️ Align Harvard logo all the way left */
+.logo-and-alert {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 0; /* No left margin */
+}
+
+/* Clean up padding to remove left spacing */
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 0 40px; /* Reduced padding */
+    height: 100%;
+}
+
+.logo .portfolio-logo { /* New style for the added logo */
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%; /* Make logo round */
+}
+
+.logo a {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #400000;
+    line-height: 1.2;
+}
+
+/* 🟥 Alert text stays centered between left and right items */
+.alert-message {
+    font-size: 0.75em;
+    color: #000000;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+/* ➡️ Align nav items to the right edge */
+.main-nav {
+    height: 100%;
+    margin-right: 0; /* No right margin */
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: 0; /* No right margin */
+}
+
+.nav-icons button {
+    background-color: #000000;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #fff;
+    padding: 0 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav-icons button:hover {
+    background-color: #000;
+}
+
+.nav-icons button svg {
+    width: 28px;
+    height: 28px;
+    fill: #fff;
+    margin-right: 8px;
+}
+
+.menu-toggle {
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Off-screen by default */
+    width: 100%;
+    max-width: 2000px;
+    height: 100%;
+    background-color: #000; /* Black background for menu */
+    color: #fff;
+    padding: 30px 0; /* Adjusted padding */
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+    transition: left 0.3s ease-in-out;
+    z-index: 1100;
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.close-btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    margin-bottom: 30px;
+}
+
+.mobile-menu-logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mobile-menu-logo .harvard-crest {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    filter: invert(1); /* Make crest white if it's red */
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.1em; /* Smaller font for close button text */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.close-btn:hover {
+    opacity: 1;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px; /* Space between main and quick links */
+}
+
+.mobile-menu ul li {
+    margin-bottom: 0; /* No bottom margin on list items */
+}
+
+.mobile-menu ul li a {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 3.5em; /* Larger font for main menu items */
+    display: block;
+    padding: 10px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: background-color 0.2s ease;
+}
+
+.mobile-menu ul li a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.quick-links-mobile {
+    margin-top: 20px;
+}
+
+.quick-links-mobile li a {
+    font-size: 1em; /* Smaller font for quick links */
+    padding: 8px 30px;
+    border-bottom: none; /* No border for quick links */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    color: #fff; /* All text in hero section will be white */
+    text-align: center;
+    padding: 150px 20px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-attachment: fixed; /* This enables the parallax effect */
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    color: #fff; /* Ensure heading is white */
+    font-size: 5.5em; /* Increased font size for name */
+    margin-bottom: 35px; /* Increased margin to separate from the next line */
+}
+
+.hero-content p {
+    color: #fff; /* Ensure paragraph is white */
+    font-size: 1.5em; /* Slightly increased font size for the description */
+    margin-bottom: 30px;
+    line-height: 1.4;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Animation for name */
+.animated-name {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 1s ease-out forwards;
+}
+
+@keyframes fadeInSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typing effect for hero subtitle */
+#typing-text { /* Applied to both typing elements */
+    overflow: hidden; /* Ensures the text is clipped initially */
+    white-space: nowrap; /* Keeps text on a single line */
+    margin: 0 auto;
+    letter-spacing: .05em; /* Spacing between characters */
+    display: inline-block; /* allows padding/margin top/bottom */
+    vertical-align: top; /* aligns to top */
+    border-right: .15em solid orange; /* The blinking cursor */
+    font-size: 1.2em; /* Adjusted font size */
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    /* No initial CSS animation, JavaScript controls typing */
+}
+
+/* Cursor animation (separate from typing) */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+
+/* Quick Links Bar - Removed from main layout, now only in mobile menu */
+.quick-links-bar {
+    display: none;
+}
+
+
+.content-blocks {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+}
+
+.content-blocks h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000000; /* Dark Crimson */
+}
+.content-blocks .grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+.block1 {
+    padding: 30px;
+}
+.block1 img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+.block2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px 40px;
+    margin: 10px 0;
+    justify-content: center;
+    box-sizing: border-box; /* Include padding in the element's total width/height */
+    height: 100%;
+
+}
+.block2 h1 {
+    text-align: left;
+    font-size: 3.0em;
+    color: #000000; /* Dark Crimson */
+    margin-bottom: 10px;
+}
+
+/* About section "Hello," text - no animation, just styling */
+#hello-text {
+    color: #000000; /* Fixed color */
+    font-size: 1em; /* Inherit from parent or set directly */
+    /* Remove any previous animation properties */
+}
+
+/* About section typing text - uses existing typing CSS */
+#about-name-typing-text {
+    font-family: 'Playfair Display', serif; /* Reverted to main heading font */
+    font-size: 1em; /* Adjust relative to Hello, */
+    color: #000000; /* Set color for this text */
+    vertical-align: middle; /* Align with Hello, */
+    overflow: hidden; /* Ensures the text is clipped initially */
+    white-space: nowrap; /* Keeps text on a single line */
+    letter-spacing: .05em; /* Spacing between characters */
+    display: inline-block; /* allows padding/margin top/bottom */
+    border-right: .15em solid orange; /* The blinking cursor */
+}
+
+.block2 p {
+    font-size: 1.3em;
+    line-height: 1.6;
+    color: #000000;
+}
+
+/* Updated Education Section Styles */
+.education-section {
+    background-color: #f0f0f0;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.education-section h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #222; /* Slightly softer black for main heading */
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.education-item {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* Slightly stronger, more defined shadow */
+    text-align: center; /* Changed to center for title + logo alignment */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add shadow transition */
+    border: 1px solid #e0e0e0; /* Subtle border for definition */
+    opacity: 0;
+    transform: translateY(30px); /* Initial state for JS animation */
+}
+
+.education-item:hover {
+    transform: translateY(-8px); /* More pronounced lift on hover */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Stronger shadow on hover */
+}
+
+/* Styles for Educational Logos */
+.educational-logo {
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
+    margin-top: 15px; /* Space below title */
+    border-radius: 50%; /* Make it round if desired */
+    object-fit: contain; /* Ensures the image fits within the bounds without cropping */
+    display: block; /* Make it block level to appear on a new line */
+    margin-left: auto; /* Center the block element */
+    margin-right: auto; /* Center the block element */
+}
+
+.education-item .education-title {
+    /* Removed flexbox properties */
+    font-size: 2.2em; /* Slightly larger title */
+    font-weight: 700;
+    color: #400000;
+    margin-bottom: 0; /* Remove bottom margin here, logo will create space */
+    text-transform: uppercase; /* Make titles uppercase for emphasis */
+    letter-spacing: 1px;
+}
+
+.education-item p {
+    font-size: 1.15em; /* Slightly larger font for general text */
+    line-height: 1.8; /* Increased line height for better readability */
+    color: #333; /* Darker general text color */
+    margin-bottom: 12px; /* Adjusted spacing */
+    text-align: left; /* Align description text to the left */
+}
+
+.education-item .institution {
+    font-weight: 700;
+    color: #1a1a1a; /* Very dark for institution name */
+    display: block;
+    margin-bottom: 8px; /* More space after institution */
+}
+
+.education-item .degree {
+    font-style: italic;
+    color: #4a4a4a; /* Darker grey for degree */
+    display: block;
+    margin-bottom: 8px;
+}
+
+.education-item .year {
+    font-size: 1em; /* Slightly larger year */
+    color: #666; /* Consistent dark grey for year */
+    display: block;
+    font-weight: 500; /* A bit bolder */
+}
+
+.education-item .description {
+    margin-top: 25px; /* More space before description */
+    color: #2c2c2c; /* Dark text for description */
+    border-top: 1px dashed #ddd; /* Add a subtle separator */
+    padding-top: 20px; /* Padding above separator */
+    font-style: italic; /* Emphasize description slightly */
+}
+
+/* Updated Skills Section Styling */
+.skills-section {
+    background-color: #0d0d0d;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.skills-section h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #ffffff; /* White text for headings */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    background-color: #fff; /* White background for skill items */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Lighter shadow */
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px); /* Initial state for JS animation */
+    cursor: pointer; /* Indicate clickable */
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Space content nicely */
+    min-height: 400px; /* Added for consistent height */
+}
+
+.skill-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+/* Click animation for skills */
+.skill-item.animate-click {
+    animation: skillPopUp 0.3s ease-out forwards;
+}
+
+@keyframes skillPopUp {
+    0% { transform: translateY(0) scale(1); box-shadow: 0 12px 28px rgba(0,0,0,0.2); }
+    50% { transform: translateY(-15px) scale(1.03); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    100% { transform: translateY(0) scale(1); box-shadow: 0 12px 28px rgba(0,0,0,0.2); }
+}
+
+
+.skill-item img {
+    width: 100%;
+    max-width: 150px; /* Adjust max-width for skill images */
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    flex-shrink: 0; /* Prevent image from shrinking */
+    margin: 0 auto; /* Center the image */
+}
+
+.skill-item .skill-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #a41034; /* Harvard Crimson for titles */
+    margin-bottom: 10px;
+}
+
+.skill-item .skill-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555; /* Darker text on white background */
+    flex-grow: 1; /* Allow description to take up available space */
+}
+
+
+/* Projects Section */
+.projects-section {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.projects-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #000000;
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column; /* Stack project cards vertically */
+    gap: 40px;
+    max-width: 1200px; /* Keep outer grid width */
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: stretch; /* Make image and text take full height */
+    opacity: 0; /* Initial state for JS animation */
+    max-width: 900px; /* Reduced width for project cards */
+    margin: 0 auto; /* Center the cards */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add for hover effect */
+}
+
+.project-card:hover {
+    transform: translateY(-10px) perspective(1000px) rotateX(2deg); /* Lift more and add subtle 3D tilt */
+    box-shadow: 0 18px 45px rgba(0,0,0,0.3); /* Stronger shadow for 3D feel */
+}
+
+
+.project-image {
+    flex: 1; /* Take available space */
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-text {
+    flex: 1; /* Take available space */
+    padding: 20px; /* Default padding for all project text */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    gap: 10px; /* Add gap between items in project-text */
+}
+
+.project-text h3 {
+    font-size: 1.4em;
+    margin-bottom: 0; /* Remove default margin as gap handles spacing */
+    color: #400000;
+}
+
+.project-text h3 a {
+    color: #400000;
+}
+
+.project-text p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0; /* Remove default margin as gap handles spacing */
+    flex-grow: 1; /* Allow paragraph to grow, but justify-content will prioritize centering */
+}
+
+/* Learn More button enhancement */
+.project-text .learn-more {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    color: #a41034;
+    margin-top: 0;
+    position: relative;
+    padding: 8px 15px; /* Added padding for a button feel */
+    background: transparent;
+    border: 2px solid #a41034;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.project-text .learn-more:hover {
+    background-color: #a41034; /* Fill background on hover */
+    color: #fff; /* White text on hover */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* More pronounced shadow */
+    transform: translateY(-2px); /* Slight lift */
+}
+
+.project-text .learn-more .arrow {
+    margin-left: 8px; /* Space between text and arrow */
+    font-size: 1.2em; /* Slightly larger arrow */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-text .learn-more:hover .arrow {
+    transform: translateX(5px) scale(1.1); /* Arrow moves and scales */
+    color: #fff; /* Arrow color changes on hover */
+}
+
+
+/* Reverse the order for the second project */
+.project-card.reversed {
+    flex-direction: row-reverse; /* This rule remains, but the class is removed from HTML for Biodata project */
+}
+
+
+/* New Contact Info Section Styles */
+.contact-info-section {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.contact-info-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #000000;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column; /* Stack vertically by default */
+    gap: 30px; /* Space between items */
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.contact-details:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    text-align: left; /* Align text to the left */
+    position: relative; /* For the subtle indicator on hover */
+    opacity: 0;
+    transform: translateY(30px); /* Initial state for JS animation */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact-item:hover {
+    background-color: #f5f5f5; /* Light background on hover */
+}
+
+.contact-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px; /* Thin line */
+    background-color: #a41034; /* Harvard Crimson */
+    transform: scaleY(0); /* Start hidden */
+    transform-origin: top;
+    transition: transform 0.3s ease-out;
+}
+
+.contact-item:hover::before {
+    transform: scaleY(1); /* Reveal line on hover */
+}
+
+.contact-item .icon {
+    font-size: 2em; /* Size of the icon */
+    color: #a41034; /* Harvard Crimson color for icons */
+    margin-right: 20px;
+    min-width: 40px; /* Ensure icon has enough space */
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-item:hover .icon {
+    color: #7a0c28; /* Darker crimson on hover */
+}
+
+.contact-item .text-content h3 {
+    font-size: 1.4em;
+    color: #400000;
+    margin-bottom: 5px;
+}
+
+.contact-item .text-content p {
+    font-size: 1em;
+    color: #555;
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #000000; /* Dark Crimson */
+    color: #fff;
+    padding: 60px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-section h4 {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    font-size: 0.95em;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.copyright-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #fff;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a img {
+    width: 64px;
+    height: 64px;
+    filter: brightness(0) invert(1); /* Makes SVG icons white */
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.social-links a img:hover {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.1);
+    filter: brightness(0) invert(1) drop-shadow(0 5px 10px rgba(255,255,255,0.4));
+}
+
+.copyright {
+    font-size: 1.0em;
+    color: #ccc;
+    margin-top: 10px; /* For smaller screens */
+}
+
+.blank-section {
+    height: 100px;  /* or any height you need */
+    background-color: transparent; /* optional */
+}
+
+/* General fade-in-up for sections */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 3.5em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+    #typing-text {
+        font-size: 1em; /* Adjusted further for smaller screens */
+    }
+    .grid-2-col {
+        gap: 30px;
+    }
+    .alert-message {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        height: auto; /* Allow header to adjust height */
+        padding: 10px 0; /* Add some vertical padding */
+    }
+    .header-content {
+        flex-direction: column; /* Stack logo/alert and nav icons */
+        align-items: flex-start;
+        height: auto;
+    }
+    .logo-and-alert {
+        width: 100%;
+        justify-content: space-between; /* Space out logo and alert */
+        margin-bottom: 10px;
+        padding-right: 20px; /* Add padding to align with container */
+    }
+    .logo {
+        padding: 0; /* Remove extra padding */
+    }
+    .alert-message {
+        margin-left: 0;
+        text-align: right;
+        flex-grow: 1; /* Allow it to take available space */
+    }
+    .main-nav {
+        width: 100%;
+        height: auto;
+        justify-content: flex-end; /* Push buttons to the right */
+    }
+    .nav-icons {
+        width: 100%;
+        justify-content: flex-end; /* Push buttons to the right */
+        height: auto;
+    }
+    .nav-icons button {
+        height: 50px; /* Give buttons a consistent height */
+        padding: 0 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5em; /* Adjusted for smaller screens */
+        margin-bottom: 25px; /* Adjusted margin for smaller screens */
+    }
+    .hero-content p {
+        font-size: 1.1em; /* Adjusted for smaller screens */
+    }
+    #typing-text {
+        font-size: 1em;
+    }
+
+    .grid-2-col {
+        grid-template-columns: 1fr; /* Stack content blocks */
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr; /* Stack footer sections */
+        text-align: center;
+    }
+    .footer-section ul {
+        padding-left: 0;
+    }
+    .footer-section ul li {
+        display: inline-block; /* Make footer links inline */
+        margin: 0 10px 10px;
+    }
+    .copyright-social {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-links {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Projects Section: On smaller screens, projects remain stacked (column) as per initial grid setting */
+    .project-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .project-card.reversed {
+        flex-direction: column;
+    }
+
+    .project-image {
+        max-width: 100%;
+    }
+
+    .project-text {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    /* Contact Info Section responsive adjustments */
+    .contact-info-section .contact-details {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .contact-item {
+        flex-direction: row; /* Keep content in a row */
+        align-items: center; /* Center items vertically */
+    }
+
+    .contact-item .icon {
+        margin-right: 15px; /* Adjust margin */
+        font-size: 1.8em;
+    }
+
+    .contact-item .text-content h3 {
+        font-size: 1.2em;
+    }
+
+    .contact-item .text-content p {
+        font-size: 0.9em;
+    }
+}
+
+/* Media query for larger screens (side-by-side layout) */
+@media (min-width: 768px) {
+    .project-card {
+        flex-direction: row; /* Default: image left, text right */
+        height: 300px; /* Increased height for consistency */
+    }
+
+    .project-card.reversed {
+        flex-direction: row-reverse; /* For reversed: text left, image right */
+    }
+
+    .project-image,
+    .project-text {
+        width: 50%; /* Explicitly set width to ensure 50/50 split */
+    }
+}

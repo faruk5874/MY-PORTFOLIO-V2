@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daraz Seller Login</title>
+  <link rel="stylesheet" href="css/seller.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="#FF5722">
+        <path d="M3 3L12 9L21 3V21L12 15L3 21V3Z"/>
+      </svg>
+      <span>Daraz Seller Center</span>
+    </div>
+    <div class="lang-select">
+      <div class="country">
+        <span class="flag">🇧🇩</span> Bangladesh ▼
+      </div>
+      <div class="language">
+        English ▼
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="left-side">
+      <h1>Become A Daraz Seller <br />Today!</h1>
+      <p><strong>Create a Daraz seller account now and reach millions of customers!</strong></p>
+      <div class="shopping-cart-illustration">
+        <div class="shopping-cart"></div>
+        <div class="bag bag1"></div>
+        <div class="bag bag2"></div>
+        <div class="location-pin"></div>
+      </div>
+    </section>
+
+    <section class="right-side">
+      <form class="login-form" onsubmit="return false;">
+        <h3>Login with Password</h3>
+        <input type="text" placeholder="Mobile Number/ Email" required />
+        <div class="password-wrapper">
+          <input id="password" type="password" placeholder="Password" required />
+          <button type="button" class="toggle-password" onclick="togglePasswordVisibility()"></button>
+        </div>
+        <button type="submit" class="btn-login">Login</button>
+        <p class="terms-text">
+          By clicking Login, you agree to these
+          <a href="#" class="terms-link">Terms & Conditions</a> and
+          <a href="#" class="privacy-link">Privacy Policy</a>
+        </p>
+        <p class="links">
+          <a href="#" class="reset-password">Reset password</a><br />
+          <a href="form.html">Register as Global Seller</a>
+        </p>
+        <p class="create-account">
+          Don't have an account yet? <a href="#" class="create-new">Create a new account</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
